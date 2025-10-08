@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+
+}
+
+#wrapper{
+    width: 100%;
+}
+
+header{
+    width: 100%;
+    text-align: center;
+    margin: 10px;
+}
+
+header h1{
+    text-transform: uppercase;
+    padding: 10px;
+    font-size: 50px;
+    font-weight: 900;
+
+}
+
+#selection select{
+    padding: 10px 15px;
+    width: 200px;
+    border-radius: 10px;
+}
+#selection input{
+    padding: 10px 15px;
+    width: 200px;
+    border-radius: 10px;
+
+}
+
+footer{
+    position: relative;
+    width: 100%;
+}
+footer button{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+/* 
+.head {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.div {
+    width: 18%;
+    height: 300px;
+    background: linear-gradient(to top, rgb(226, 226, 226), rgb(161, 161, 161));
+    text-align: center;
+    padding: 20px 15px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    transition: all .2s linear;
+    box-shadow: 0px 3px 16px black;
+}
+
+.div:hover {
+    background: linear-gradient(to top, rgb(109, 0, 0),  rgb(255, 115, 0));
+    color: white;
+}
+
+.image {
+    width: 80%;
+    height: 90%;
+    object-fit: contain;
+    padding: 5px;
+}
+
+.newdiv{
+    width: 18%;
+    height: 300px;
+    background: linear-gradient(to top, rgb(226, 226, 226), rgb(161, 161, 161));
+    text-align: center;
+    padding: 20px 15px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    transition: all .2s linear;
+    box-shadow: 0px 3px 16px black;
+}
+ */
+
+

@@ -1,40 +1,29 @@
-let main = document.querySelector(".main")
-// let url = "https://pokeapi.co/api/v2/pokemon/1/"
 let url = "https://pokeapi.co/api/v2/pokemon?limit=20&offset=0";
-async function fetchurl() {
-    let x = await fetch(url)
-    let result = await x.json()
-    console.log(result);
-    console.log(result.results);
-    let arr = result.results
+let finalData = []
 
-    for (let i = 0; i < arr.length; i++) {
-
-
-        let name = document.createElement("div")
-        name.innerText = arr[i].name
-        let newurl = arr[i].url
-        console.log(newurl);
-        let y = await fetch(newurl)
-        let newresult = await y.json()
-        console.log(newresult);
-
-        let image = newresult.sprites.other.dream_world.front_default
-        // console.log(image);
-
-        let div = document.createElement("div")
-        div.classList.add("div")
-        main.append(div)
-        div.append(name)
-        let img = document.createElement("img")
-        img.src = image
-        div.prepend(img)
-    }
+async function fatchUrl(fatchtourl) {
+    let reserve = await fetch(fatchtourl)
+    let result = await reserve.json()
+    return result
 }
-fetchurl()
 
-// async function newfeachurl(newurl) {
+window.addEventListener("load", async () => {
+    let data = await fatchUrl(url)
+    displayData(await fatchnew(data))
+})
 
-// }
+async function fatchnew(data) {
+    let promises = [];
+    for (let i = 0; i < data.results.length; i++) {
+        promises.push(fatchUrl(data.results[i].url))
+    }
+
+    finalData.push(...(await Promise.all(promises)))
+    return finalData
+}
+
+async function displayData(){
+
+}
 
 
