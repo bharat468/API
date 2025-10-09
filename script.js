@@ -135,13 +135,23 @@ select.addEventListener("change", (e) => {
     if (e.target.value === "All") {
         displayData(finalData);
     }
+    
     else {
         let pokemonname = finalData.filter((last) => {
             const category = last.types[0].type.name;
 
             return category.includes(e.target.value)
         })
-        displayData(pokemonname)
+        if (pokemonname.length === 0) {
+            main.innerHTML = ""
+            let Error = document.createElement("div")
+            Error.classList.add("error")
+            Error.innerText = "Error :- Sorry Pokiman Not Found"
+            main.append(Error)
+        }
+        else {
+            displayData(pokemonname)
+        }
     }
 })
 

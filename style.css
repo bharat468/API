@@ -9,6 +9,7 @@
 body {
     width: 100%;
     height: 100%;
+    background-color: bisque;
 }
 
 
@@ -60,7 +61,7 @@ main {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 40px;
     margin-top: 50px;
     padding: 10px;
 }
@@ -75,12 +76,14 @@ main {
     font-size: 20px;
     font-weight: 600;
     transition: all .2s linear;
-    box-shadow: 0px 3px 16px black;
+    box-shadow: 0px 3px 16px -5px black;
 }
 
 .div:hover {
     background: linear-gradient(to top, rgb(109, 0, 0), rgb(255, 115, 0));
     color: white;
+    box-shadow: 0px 2px 13px -1px rgb(0, 48, 137);
+
 }
 
 .image {
@@ -90,3 +93,7 @@ main {
     padding: 5px;
 }
 
+.error{
+    font-size: 30px;
+    font-weight: 600;
+}
