@@ -3,15 +3,13 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
-
 }
 
 body {
-    width: 100%;
-    height: 100%;
+    width: 99%;
+    height: 100vh;
     background-color: bisque;
 }
-
 
 header {
     width: 100%;
@@ -24,36 +22,48 @@ header h1 {
     padding: 10px;
     font-size: 50px;
     font-weight: 900;
-
+    color: red;
 }
 
-#selection select {
-    padding: 10px 15px;
-    width: 200px;
-    border-radius: 10px;
+#selection {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
 }
 
+#selection select,
 #selection input {
     padding: 10px 15px;
     width: 200px;
     border-radius: 10px;
-
+    border: 1px solid #999;
+    outline: none;
+    transition: 0.3s;
 }
+
 
 footer {
     width: 100%;
 }
 
 footer button {
-    padding: 10px 15px;
+    padding: 12px 18px;
     position: fixed;
     right: 30px;
     bottom: 30px;
     border-radius: 10px;
-    background-color: darkgreen;
+    background: darkgreen;
     border: none;
     color: #fff;
+    font-size: 16px;
     cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+footer button:hover {
+    background: seagreen;
+    transform: scale(1.05);
 }
 
 main {
@@ -72,18 +82,19 @@ main {
     background: linear-gradient(to top, rgb(226, 226, 226), rgb(161, 161, 161));
     text-align: center;
     padding: 20px 15px;
-    border-radius: 10px;
+    border-radius: 12px;
     font-size: 20px;
     font-weight: 600;
-    transition: all .2s linear;
+    transition: all 0.3s ease-in-out;
     box-shadow: 0px 3px 16px -5px black;
+    cursor: pointer;
 }
 
 .div:hover {
-    background: linear-gradient(to top, rgb(109, 0, 0), rgb(255, 115, 0));
+    background: linear-gradient(45deg, #ff6a00, #ee0979);
     color: white;
-    box-shadow: 0px 2px 13px -1px rgb(0, 48, 137);
-
+    box-shadow: 0px 8px 20px -2px rgba(0, 0, 0, 0.6);
+    transform: translateY(-8px) scale(1.03);
 }
 
 .image {
@@ -91,9 +102,16 @@ main {
     height: 90%;
     object-fit: contain;
     padding: 5px;
+    transition: transform 0.3s;
 }
 
-.error{
+.div:hover .image {
+    transform: scale(1.05);
+}
+
+.error {
     font-size: 30px;
     font-weight: 600;
+    text-align: center;
+    color: red;
 }
