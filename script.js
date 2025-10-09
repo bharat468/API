@@ -21,6 +21,7 @@ async function fatchUrl(fatchtourl) {
 window.addEventListener("load", async () => {
     let data = await fatchUrl(url)
     displayData(await fatchnew(data))
+
     newApi()
 
 
@@ -82,14 +83,21 @@ input.addEventListener("keyup", async (e) => {
     displayData(lastwork)
 })
 
-select.addEventListener("change", (e) => {
-    let pokemonname = finalData.filter((last) => {
-        const category = last.types[0].type.name;
+// function filterPokemons(e) {
+//     console.log(pokemonsOnScreen);
+//     clearScreen();
+//     if (e.target.value = "all") populatePokemonsOnScreen(pokemonsOnScreen);
+//     else {
+//         populatePokemonsOnScreen(
+//             pokemonsOnScreen.filter((obj) => {
+//                 return obj.types.find((object) => object.type.name === e.target.value);
+//             })
+//         );
+//     }
+// }
+// filterPokemons()
 
-        return category.includes(e.target.value)
-    })
-    displayData(pokemonname)
-})
+
 
 
 
@@ -103,6 +111,10 @@ async function newApi() {
         search.push(last)
         // console.log(search);
         // console.log(last);
+        // let all = document.createElement("option")
+        // all.textContent = "All";
+        // all.value = "All";
+        // select.append(all)
 
         let option = document.createElement("option")
         option.textContent = last;
@@ -112,10 +124,26 @@ async function newApi() {
         // console.log(options);
 
         select.append(option)
+        // all.addEventListener("change", () => {
+        //     displayData()
+        // })
     }
 }
 
 
+select.addEventListener("change", (e) => {
+    if (e.target.value === "All") {
+        displayData(finalData);
+    }
+    else {
+        let pokemonname = finalData.filter((last) => {
+            const category = last.types[0].type.name;
+
+            return category.includes(e.target.value)
+        })
+        displayData(pokemonname)
+    }
+})
 
 
 
